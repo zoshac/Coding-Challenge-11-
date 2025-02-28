@@ -9,7 +9,7 @@ class Book {
     getDetails(){ // to show the details of the book
         console.log(`${this.title} written by ${this.author} is this number ${this.isbn} and has ${this.copies} many copies.`);
     }
-    updatesCopies(quantity){ // to show the amount of copies of the book on hand 
+    updateCopies(quantity){ // to show the amount of copies of the book on hand 
         this.copies += quantity;
         if (this.copies < 0 ) {
             this.copies = 0;
