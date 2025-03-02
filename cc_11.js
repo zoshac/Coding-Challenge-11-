@@ -1,4 +1,4 @@
-// Creating a Book Class 
+// Task 1- Creating a Book Class 
 class Book {
     constructor(title, author, isbn, copies){
         this.title = title;
@@ -24,3 +24,31 @@ console.log(book1.getDetails());
 book1.updateCopies(-1);
 console.log(book1.getDetails());
 // Expected output: "Title: The Great Gatsby, Author: F. Scott Fitzgerald, ISBN: 123456, Copies: 4"
+
+
+// Task 2- Creating a Borrower Class 
+
+class Borrower {
+    constructor(name, borrowerID) {
+        this.name = name;
+        this.borrowerID = borrowerID;
+        this.borrowedBooks = [];
+    }
+    borrowBook(book) { // adds book
+        this.borrowedBooks.push(book.title);
+        console.log(`${this.name} borrowed "${book.title}"`);
+    }
+    returnBook(book) { // removes book
+        this.borrowedBooks = this.borrowedBooks.filter(title => title !== book.title);
+        console.log(`${this.name} returned "${book.title}"`);
+    }
+}
+
+const borrower1 = new Borrower("Alice Johnson", 201);
+
+borrower1.borrowBook(book1);
+console.log(borrower1.borrowedBooks);
+
+borrower1.returnBook(book1);
+console.log(borrower1.borrowedBooks);
+
