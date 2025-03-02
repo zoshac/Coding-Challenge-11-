@@ -52,3 +52,25 @@ console.log(borrower1.borrowedBooks);
 borrower1.returnBook(book1);
 console.log(borrower1.borrowedBooks);
 
+// Task 3- Creating a Library Class 
+
+class Library {
+    constructor() {
+        this.books = [];
+        this.borrowers = [];
+    }
+    addBook(book) { //puts new book in library 
+        this.books.push(book);
+    }
+    listBooks() {
+        this.books.forEach(book => {
+            console.log(`Title: ${book.title}, Author: ${book.author}, ISBN:${book.ISBN}, Copies: ${book.copies}`);
+        });
+    }
+}
+//Test Cases 
+const library = new Library();
+library.addBook(book1);
+library.listBooks();
+
+
