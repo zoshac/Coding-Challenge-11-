@@ -107,7 +107,6 @@ returnBook(borrowerId, isbn)
         borrower.returnBook(book.title);
     }
 
-
 // Test Cases 
 library.returnBook(201, 123456);
 console.log(book1.getDetails());
