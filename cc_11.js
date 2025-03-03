@@ -95,3 +95,22 @@ console.log(book1.getDetails());
 // Expected output: "Title: The Great Gatsby, Author: F. Scott Fitzgerald, ISBN: 123456, Copies: 3"
 console.log(borrower1.borrowedBooks);
 // Expected output: ["The Great Gatsby"]
+
+
+//Task 5- Implementing Book returns 
+
+returnBook(borrowerId, isbn) 
+    const book = this.books.find(book => book.isbn === isbn);
+    const borrower = this.borrowers.find(borrower => borrower.borrowerId === borrowerId);
+    if (book && borrower) { // checks conditions to return book
+        book.updateCopies(1); // adds 1 to stock
+        borrower.returnBook(book.title);
+    }
+
+
+// Test Cases 
+library.returnBook(201, 123456);
+console.log(book1.getDetails());
+// Expected output: "Title: The Great Gatsby, Author: F. Scott Fitzgerald, ISBN: 123456, Copies: 4"
+console.log(borrower1.borrowedBooks);
+// Expected output: []
